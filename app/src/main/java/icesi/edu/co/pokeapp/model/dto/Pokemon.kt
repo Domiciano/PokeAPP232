@@ -1,5 +1,7 @@
 package icesi.edu.co.pokeapp.model.dto
 
+import com.google.gson.annotations.SerializedName
+
 data class Pokemon(
     var id:Int,
     var name:String,
@@ -8,7 +10,16 @@ data class Pokemon(
 )
 
 data class Sprites(
-    var front_default:String
+    var front_default:String,
+    var other:SpriteContainer
+)
+data class SpriteContainer(
+    @SerializedName("official-artwork")
+    var officialArtwork: Sprite
+)
+
+data class Sprite(
+    var front_default: String
 )
 
 data class StatWrapper(

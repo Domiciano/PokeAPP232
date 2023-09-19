@@ -1,12 +1,9 @@
 package icesi.edu.co.pokeapp.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.Glide
 import icesi.edu.co.pokeapp.model.dto.Pokemon
 import icesi.edu.co.pokeapp.model.entity.PokemonEntity
 import icesi.edu.co.pokeapp.model.services.RetrofitServices
@@ -14,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel :ViewModel() {
+class PodedexViewModel :ViewModel() {
 
     //State: las variables que se muestran al USER
     private val _pokemon = MutableLiveData<Pokemon>()
