@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.Glide
 import icesi.edu.co.pokeapp.model.dto.Pokemon
+import icesi.edu.co.pokeapp.model.entity.PokemonEntity
 import icesi.edu.co.pokeapp.model.services.RetrofitServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,6 +41,26 @@ class MainViewModel :ViewModel() {
 
         }
     }
+
+    fun catchPokemon(){
+        viewModelScope.launch(Dispatchers.IO){
+            _pokemon.value?.let {
+                var pokemonEntity = PokemonEntity(
+                    "${it.id}",
+                    it.name,
+                    it.sprites.front_default,
+                    it.stats[2].base_stat,
+                    it.stats[1].base_stat
+                )
+                val response = RetrofitServices.firebaseRepository.putPokemon(
+                    "${_pokemon.value?.id}",
+                    pokemonEntity
+                ).execute()
+            }
+
+        }
+    }
+
 
 
 }

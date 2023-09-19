@@ -39,5 +39,8 @@ class MainActivity : AppCompatActivity() {
                 binding.pokemonInput.editText?.text.toString()
             )
         }
+        binding.catchBtn.setOnClickListener {
+            viewmodel.catchPokemon()
+        }
     }
 }
