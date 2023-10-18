@@ -5,12 +5,11 @@
         android:id="@+id/pokedex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@mipmap/ic_launcher"
         android:title="Pokedex" />
     <item
         android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@mipmap/ic_launcher"
+    
         android:title="Profile" />
 </menu>
